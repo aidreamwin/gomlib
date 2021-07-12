@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/aidreamwin/gomlib"
+	"github.com/aidreamwin/gomlib/disk"
 	"log"
 )
 
