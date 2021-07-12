@@ -7,7 +7,7 @@ import (
 
 func main() {
 	log.Println("gomlib")
-	lpFreeBytesAvailable, lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes, err := disk.DiskUsage()
+	lpFreeBytesAvailable, lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes, err := disk.DiskUsage("C:")
 	if err != nil {
 		log.Println(err)
 		return

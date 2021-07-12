@@ -2,10 +2,10 @@
 
 package disk
 
-func getUsage() (int64, int64, int64, error) {
+func getUsage(usagePath string) (int64, int64, int64, error) {
 
 	fs := syscall.Statfs_t{}
-	err := syscall.Statfs(path, &fs)
+	err := syscall.Statfs(usagePath, &fs)
 	if err != nil {
 		return 0, 0, 0, err
 	}

@@ -8,7 +8,7 @@ import (
 
 func TestDisk(t *testing.T) {
 	sTime := time.Now().UnixNano()
-	available, free, total, err := DiskUsage()
+	available, free, total, err := DiskUsage("C:")
 	if err != nil {
 		t.Error(err)
 		return

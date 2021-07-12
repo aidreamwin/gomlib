@@ -7,7 +7,7 @@ import (
 	"unsafe"
 )
 
-func getUsage() (int64, int64, int64, error) {
+func getUsage(usagePath string) (int64, int64, int64, error) {
 	kernel32, err := syscall.LoadLibrary("Kernel32.dll")
 	if err != nil {
 		return 0, 0, 0, err
@@ -22,7 +22,7 @@ func getUsage() (int64, int64, int64, error) {
 	available := int64(0)
 	free := int64(0)
 	total := int64(0)
-	res, err := syscall.UTF16PtrFromString("C:")
+	res, err := syscall.UTF16PtrFromString(usagePath)
 	if err != nil {
 		return 0, 0, 0, err
 	}
