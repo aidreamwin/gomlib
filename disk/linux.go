@@ -13,5 +13,5 @@ func getUsage(usagePath string) (int64, int64, int64, error) {
 	}
 	total := fs.Blocks * uint64(fs.Bsize)
 	free := fs.Bfree * uint64(fs.Bsize)
-	return free, free, total, nil
+	return int64(free), int64(free), int64(total), nil
 }
