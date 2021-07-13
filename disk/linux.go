@@ -2,6 +2,8 @@
 
 package disk
 
+import "syscall"
+
 func getUsage(usagePath string) (int64, int64, int64, error) {
 
 	fs := syscall.Statfs_t{}
